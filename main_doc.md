@@ -16,10 +16,8 @@ teachers, and all other learners can study PIV with ease.
 (structure)
 The overall structure of learnpiv is shown below and is very much based off a Django Framework:
 
-![alt text](pivdoc_images/structure1.png)
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/structure1.png" height="300"/>
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/math4610/master/homework3_images/task4_image.png" width="300"/>
-![proposal](pivdoc_images/structure1.png =250)
 (include environment variables)
 (include Github)
 (include AWS)
