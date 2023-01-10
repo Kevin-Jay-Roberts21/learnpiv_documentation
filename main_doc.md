@@ -35,11 +35,22 @@ main/ folder is expanded:
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS1.png" height="250"/>
 
-(include environment variables)
-(include AWS)
-(include Mailjet)
-(include Gmail)
-(include Heroku)
+Notice how css/ and js/ are folders that are included in the code that's pushed to the github repository. These folders are
+included solely to make testing javascripts functions and css styles easier. If anything in these folders is changed and
+pushed to the github repository and then pushed to heroku, then the live site WILL NOT include these changes because heroku
+is grabbing information from the AWS s3 bucket, and not from the folders that have been pushed. To be consistent in making 
+changes to the css styles and javascript functions, it must be tested locally first (again, how to test will be shown below),
+and then the developer must include these changes additionally to the s3 bucket. This must be done to make changes to the
+website that are shown publicly and not just locally.
+
+###Mailjet
+
+###Gmail
+
+###Heroku
+
+###.env
+
 
 
 ## Code Additions, Navigation and Testing
