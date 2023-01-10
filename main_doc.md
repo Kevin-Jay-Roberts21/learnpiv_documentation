@@ -1,8 +1,6 @@
 # Learnpiv.org Documentation
 #### By: Kevin Roberts
-#### Last modified: October/2022
-NOTE: This documentation is written as if heroku is the hosting service for Learnpiv.org.
-
+#### Last modified: January/2023
 
 ## Introduction and Purpose
 
@@ -13,13 +11,31 @@ teachers, and all other learners can study PIV with ease.
 
 ## Structure and Outside Sources
 
-(structure)
+### Structure
 The overall structure of learnpiv is shown below and is very much based off a Django Framework:
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/structure1.png" height="300"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/structure1.png" height="250"/>
+
+###Github
+We use a Github repository to store all our code updates and progress. This repository is currently private, but can be accessed by 
+the permission of the repository holder Kevin Roberts (kevinjrob9@gmail.com). As heroku is the host of the website, it requires
+access to the information from the Github account. If one is to edit the website, one must first make changes and push them
+to the github account, then afterwards push the github code to heroku. This will be shown more in depth in the following
+Code Additions, Navigation and Testing section.
+
+###AWS
+AWS or Amazon Web Services, is where we keep all of our static images, videos, css, and javascript code. All of this information 
+is kept in a s3 bucket called learnpiv-images. This bucket includes a static folder which holds all static and new information
+that can be uploaded into the website. Additionally, the experiment images that a user creates and saves are also stored 
+in this bucket. It may seem odd that the bucket holds static and non-static information, but that is just the format
+of the bucket for now.
+
+Another important note, please observe the following structure of the website, similar to what was shown above, only the 
+main/ folder is expanded: 
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS1.png" height="250"/>
 
 (include environment variables)
-(include Github)
 (include AWS)
 (include Mailjet)
 (include Gmail)
