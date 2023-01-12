@@ -41,7 +41,13 @@ pushed to the github repository and then pushed to heroku, then the live site WI
 is grabbing information from the AWS s3 bucket, and not from the folders that have been pushed. To be consistent in making 
 changes to the css styles and javascript functions, it must be tested locally first (again, how to test will be shown below),
 and then the developer must include these changes additionally to the s3 bucket. This must be done to make changes to the
-website that are shown publicly and not just locally.
+website that are shown publicly and not just locally. In the settings.py file of the project, in the AWS information section, 
+it is shown that the STATICFILES_STORAGE is connected to the AWS s3 bucket. This variable ensures that the static files 
+are taken from the s3 bucket and not from the static/ folder in the project when the project is in production. To make the
+website use the static information from the bucket, one must navigate into the project, activate it, and run ``python manage.py collectstatic``.
+This process is shown in the figure below: 
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS2.png" height="250"/>
 
 ###Mailjet
 
