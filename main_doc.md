@@ -14,16 +14,16 @@ teachers, and all other learners can study PIV with ease.
 ### Structure
 The overall structure of learnpiv is shown below and is very much based off a Django Framework:
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/structure1.png" height="250"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/structure1.png" height="400"/>
 
-###Github
+### Github
 We use a Github repository to store all our code updates and progress. This repository is currently private, but can be accessed by 
 the permission of the repository holder Kevin Roberts (kevinjrob9@gmail.com). As heroku is the host of the website, it requires
 access to the information from the Github account. If one is to edit the website, one must first make changes and push them
 to the github account, then afterwards push the github code to heroku. This will be shown more in depth in the following
 Code Additions, Navigation and Testing section.
 
-###AWS
+### AWS
 AWS or Amazon Web Services, is where we keep all of our static images, videos, css, and javascript code. All of this information 
 is kept in a s3 bucket called learnpiv-images. This bucket includes a static folder which holds all static and new information
 that can be uploaded into the website. Additionally, the experiment images that a user creates and saves are also stored 
@@ -33,7 +33,7 @@ of the bucket for now.
 Another important note, please observe the following structure of the website, similar to what was shown above, only the 
 main/ folder is expanded: 
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS1.png" height="250"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS1.png" height="400"/>
 
 Notice how css/ and js/ are folders that are included in the code that's pushed to the github repository. These folders are
 included solely to make testing javascripts functions and css styles easier. If anything in these folders is changed and
@@ -47,23 +47,23 @@ are taken from the s3 bucket and not from the static/ folder in the project when
 website use the static information from the bucket, one must navigate into the project, activate it, and run ``python manage.py collectstatic``.
 This process is shown in the figure below: 
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS2.png" height="325"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS2.png" height="600"/>
 
-###Mailjet
+### Mailjet
 Mailjet is the mailing service we chose to send emails to our users. The only types of emails that we currently send to users
 include email for resetting account password, and emails to notify a user for when they've submitted a content suggestion, 
 and finally an email if their suggestion was accepted or declined. Our Mailjet information can be found in the email section 
 of the setting.py file, and it's usage can be found in the register/views.py file as well as the main/views.py file in the
 project.
 
-###Gmail
+### Gmail
 Coordinating with mailjet, we have created a learnpiv gmail account: learnpiv@gmail.com. This gmail account is the account that will send all
 the mail to the users of the learnpiv.com website. Mailjet uses this email to send mail. As of now this is the only use for the gmail account.
 
-###Heroku
+### Heroku
 Heroku is the host of the entire django app project.
 
-###.env
+### .env
 
 
 
