@@ -47,13 +47,21 @@ are taken from the s3 bucket and not from the static/ folder in the project when
 website use the static information from the bucket, one must navigate into the project, activate it, and run ``python manage.py collectstatic``.
 This process is shown in the figure below: 
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS2.png" height="250"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/AWS2.png" height="325"/>
 
 ###Mailjet
+Mailjet is the mailing service we chose to send emails to our users. The only types of emails that we currently send to users
+include email for resetting account password, and emails to notify a user for when they've submitted a content suggestion, 
+and finally an email if their suggestion was accepted or declined. Our Mailjet information can be found in the email section 
+of the setting.py file, and it's usage can be found in the register/views.py file as well as the main/views.py file in the
+project.
 
 ###Gmail
+Coordinating with mailjet, we have created a learnpiv gmail account: learnpiv@gmail.com. This gmail account is the account that will send all
+the mail to the users of the learnpiv.com website. Mailjet uses this email to send mail. As of now this is the only use for the gmail account.
 
 ###Heroku
+Heroku is the host of the entire django app project.
 
 ###.env
 
