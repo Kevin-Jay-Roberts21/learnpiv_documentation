@@ -61,7 +61,27 @@ Coordinating with mailjet, we have created a learnpiv gmail account: learnpiv@gm
 the mail to the users of the learnpiv.com website. Mailjet uses this email to send mail. As of now this is the only use for the gmail account.
 
 ### Heroku
-Heroku is the host of the entire django app project.
+Heroku is the host of the entire django app project. Heroku is a cloud platform as a service (Paas) that allows us to update, 
+monitor, and scale the learnpiv.com application. There are a few important aspects of Heroku that we are using which I'll 
+list below and explain:
+
+#### General Information
+
+Upon logging into the heroku account, you should see something like the following which is a list of applications. In our
+case, we only have the learnpiv app: 
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku1.png" height="600"/>
+
+
+
+#### Dynos
+
+#### Postgres database
+
+#### Environment Variables
+
+#### Updates
+
 
 ### .env
 
