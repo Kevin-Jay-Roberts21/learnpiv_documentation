@@ -76,6 +76,26 @@ To navigate into all the learnpiv app general information, click on the app and 
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku2.png" height="600"/>
 
+Before November 28th, 2022, Heroku allowed us to freely host the learnpiv app. More specifically, we did not have to pay 
+for Dynos or for the Postgres database. Now they are charging all apps on these aspects and that's what's being explained
+in the red box in the figure above. Below the red box, one can see that we are using Heroku's Postgres database to store 
+all of our data, as well as an eco dyno plan, and I'll explain further what dynos actually are a little later.
+
+To the right of the Add-ons in the figure above are the latest deploys. This is one of the nicer features of Heroku. Here 
+you can see if your builds have succeeded, when you last deployed, and differences in deployment. Additionally, you can 
+click on View build log to observe errors in the build. This is a great way to debug if the application has failed to build. 
+These builds are initiated whenever environment variables are changed, Add-ons are added, and when pushing code from the
+github repository. The command ``git push heroku main`` is the command to push code from the repository to heroku, and I 
+go over how this is done more specifically in the Code Additions, Navigvation, and Testing section. 
+
+It's important to always keep the code and files in heroku the exact same as the code and files in the github repository.
+One may ask, "Why should I have to worry about this if heroku is always just using the code that's pushed from the github
+repository?" The reason one should worry is, because we have written code that writes code to certain files in heroku after 
+a user interacts with the website and not in the github repository. This was an earlier development issue, which has been 
+resolved in such a way that only YOU, the developer, can make the changes. It's just important to understand that there 
+can be differences in the code in heroku and the code in the github repository. Making sure the code is consistent in both
+is good practice and can easily be done by pushing code from the repository to heroku.
+
 
 
 #### Dynos
