@@ -72,6 +72,10 @@ case, we only have the learnpiv app:
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku1.png" height="600"/>
 
+To navigate into all the learnpiv app general information, click on the app and you will be brought to the following page: 
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku2.png" height="600"/>
+
 
 
 #### Dynos
