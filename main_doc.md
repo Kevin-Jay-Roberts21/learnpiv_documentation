@@ -96,15 +96,26 @@ resolved in such a way that only YOU, the developer, can make the changes. It's 
 can be differences in the code in heroku and the code in the github repository. Making sure the code is consistent in both
 is good practice and can easily be done by pushing code from the repository to heroku.
 
-
+Observe the following tabs in the figure above on the heroku website. The second tab in Resources where one can find more
+information about the add-ons that are being used (for learnpiv, we only use Dynos and Postgres). The next tab, Deploy, 
+includes more information about the connection Heroku has with the github repository. In this section you can also allow 
+manual deploys and set up different code connections. We are not currently using any of these additional features. The final 
+tab to keep in mind is of course the Settings tab. The information in this tab includes environment variables, domain names, 
+and a convenient Maintenance Mode option, which is nice to use when there are bugs in the website. It shuts down the site
+so that nobody can access it while the developer can fix any bugs. In the next few paragraphs I'll go over Dynos, Slugs, 
+environment variables, and more information on the database, all of which are heavy aspects of heroku.
 
 #### Dynos
+
+In the Heroku documentation, it is said that Dynos are simply lightweight Linux containers dedicated to running the application
+processes. For now, the learnpiv application is using the Eco plan for Dynos, meaning we get 1000 dyno hours shared across
+all our Eco dynos. 
+
+#### Slugs
 
 #### Postgres database
 
 #### Environment Variables
-
-#### Updates
 
 
 ### .env
