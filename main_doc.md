@@ -109,7 +109,12 @@ environment variables, and more information on the database, all of which are he
 
 In the Heroku documentation, it is said that Dynos are simply lightweight Linux containers dedicated to running the application
 processes. For now, the learnpiv application is using the Eco plan for Dynos, meaning we get 1000 dyno hours shared across
-all our Eco dynos. 
+all our Eco dynos. A heroku dyno is essentially an instance of a server that contains all the learnpiv application's code, 
+dependencies (like matplotlib, Pillow, BeautifulSoup, etc), and environment variables pre-loaded into it. A heroku dyno can
+also run any process that comprises the learnpiv app. To learn more on scaling dynos, heorku provides wonderful documentation
+[here](https://devcenter.heroku.com/articles/dyno-types#:~:text=From%20the%20Heroku%20Dashboard&text=Click%20the%20app%20you%20want,Professional%20(Standard%2FPerformance).).
+To ensure that the scaling of dynos is working, be sure to be in the pivwebsite folder that contains manage.py. For me it's 
+Users/kevinjayroberts/Dev/pivwebsite/pivwebsite
 
 #### Slugs
 
