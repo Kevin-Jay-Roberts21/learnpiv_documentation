@@ -118,7 +118,26 @@ Users/kevinjayroberts/Dev/pivwebsite/pivwebsite
 
 #### Slugs
 
+From the heroku documentation, Slugs are said to be "compressed and pre-packaged copies of your application optimized for 
+distribution to the dyno manager". When code from the github repository is pushed to heroku, it is recieved by the slug 
+compiler. This compiler transforms the information into a slug. Scaling an application (scaling dynos as described above) 
+downloads and expands the slug into a dyno for execution. As of January 2023, the learnpiv application is using 316.1 MiB 
+of 500 MiB available slug size. There are times when pushing code up to heroku in the terminal, one may get a message
+saying that "your slug size is too large". A most common cause of this is because there is too much data being pushed to 
+heroku that the slugs can't handle. We ran into this issue many times after pushing code to heroku that included images.
+This also may happen if the packages being loaded are too large. It's always good practice to make sure that all the packages 
+in the requirements.txt folder are necessary to the project. If there are packages that aren't being used in the website, 
+then they should not be included in the requirements.txt because it'll just take up more slugs that don't need to be used.
+
 #### Postgres database
+
+The Postgres database is a managed SQL database service that is provided by heroku. We are using this database to store
+all the users' information in the website except for their generated images (which are being stored in the AWS s3 bucket).
+There are a variety of ways that you can view the information stored in the Postgres database. The most general way is through
+the Heroku account. In the home page of application (see image above), to view more database information, click on the 
+purple Heroku Postgres link. This page gives general information on Connections, Rows, Data Size, and Tables. Connections 
+describe how many users are logged in and viewing the content. Note that this is only for when users are logged in and not 
+just viewing the content on the website. 
 
 #### Environment Variables
 
