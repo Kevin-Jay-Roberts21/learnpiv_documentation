@@ -137,7 +137,20 @@ There are a variety of ways that you can view the information stored in the Post
 the Heroku account. In the home page of application (see image above), to view more database information, click on the 
 purple Heroku Postgres link. This page gives general information on Connections, Rows, Data Size, and Tables. Connections 
 describe how many users are logged in and viewing the content. Note that this is only for when users are logged in and not 
-just viewing the content on the website. 
+just viewing the content on the website. Rows are defined as single groups of related data within a table. Data Size is, 
+well, how much data we are using. We are allowed 1 GB with the current plan we are paying for. We don't have to worry about 
+this increasing too rapidly because what really increases the database size is users' saved images, which we are storing 
+in AWS. The only data that will be added to the website (that will not be handled by the developer) will be when a new user 
+creates an account. Tables are referring to essentially how many models the website has. Models will be explained further 
+down in the documentation, but here I'll show you a few ways how to access the database Tables through the website itself 
+and the command line (for Mac users).
+
+There are two ways to access the database: through the terminal and through the website. In the terminal, navigate to
+the project and type ``heroku pg:psql`` and hit enter. For me, it looks like the following:
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku3.png" height="600"/>
+
+You may have to log into the heroku account if you haven't done so already to access the database information.
 
 #### Environment Variables
 
