@@ -166,7 +166,8 @@ For me, it's the following:
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku4.png" height="300"/>
 
-
+Then one can proceed to create a username and a strong password. Once created, navigate to the website [here](http://www.learnpiv.com/login/) 
+and log in with the credentials just made. 
 
 
 #### Environment Variables
