@@ -148,9 +148,26 @@ and the command line (for Mac users).
 There are two ways to access the database: through the terminal and through the website. In the terminal, navigate to
 the project and type ``heroku pg:psql`` and hit enter. For me, it looks like the following:
 
-<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku3.png" height="600"/>
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku3.png" height="300"/>
 
-You may have to log into the heroku account if you haven't done so already to access the database information.
+Logging in to heorku may be required if not done so already to access the database information. From here, 
+type the command ``\dt``. This command will show you all the tables. Many of these tables are not manually created, some 
+are taken from the django documentation. The only tables that we've created from scratch for the website are ``main_experimentdata``, 
+``main_experimentnonuserdata``, ``main_experimentsingledata``, and ``main_writenewcode``. The purposes of these tables will
+be described further in the models.py section of the documentation. To view any further information stored from the tables
+in the terminal, one can type the following command: ``select * from "<table_name>";``. For example, replacing the ``<table_name>``
+with ``auth_group``, and hitting enter, will display information on all the users of the website.
+
+Unfortunately, one cannot modify the database information using the terminal, at least not very easily. Luckily, the django 
+framework provides another user-friendly way to modify information and have full access to the database. For this, the user 
+must create an account for the website and must be a super user. There is already a superuser account in the website, but to 
+create one, one must navigate to the main folder of the project and type the command ``heroku run python pivwebsite/manage.py createsuperuser``. 
+For me, it's the following:
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku4.png" height="300"/>
+
+
+
 
 #### Environment Variables
 
