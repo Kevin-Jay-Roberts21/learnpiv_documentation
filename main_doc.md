@@ -172,10 +172,23 @@ The page you arrive to should look like the following:
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku5.png" height="500"/>
 
+Here you can view user information and experiment information. Additionally, you can delete experiments and users from this 
+user interface. It is not recommended that anything under MAIN in the image above is not deleted through this interface.
+The reason to not do so is because the experiments and "new codes" are tied to the AWS s3 bucket. It is better to delete
+such data through AWS first and then in this interface. However, deleting "new codes" through the website will also delete 
+data stored in the s3 bucket, and I'll go over this more later.
 
+That covers that majority of the database information. More about how data is created, stored and retrieved will be described
+further under Code Additions and when I go over models in the code descriptions.
 
 #### Environment Variables
 
+Environment variables are a major aspect of the website, arguably the most important. Environment variables are essentially 
+a collection of passwords which give accessibility to certain services such as AWS, Mailjet, Gmail, and other. The learnpiv 
+website uses Amazon Web Services (AWS) to store data and Mailjet and Gmail to send emails. With each of these services, 
+comes important variables (like usernames and passwords to accounts) which can be found in the heroku account under Config 
+Vars. Note that these variables may differ from the ones in the local project in the .env folder. Differences like the ``DEBUG``
+variable for example. We always want ``DEBUG`` set to True when testing and always want it False when in production. 
 
 ### .env
 
