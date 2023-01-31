@@ -167,7 +167,11 @@ For me, it's the following:
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku4.png" height="500"/>
 
 Then one can proceed to create a username and a strong password. Once created, navigate to the website [here](http://www.learnpiv.com/login/) 
-and log in with the credentials just made. 
+and log in with the credentials just made. After logging in, navigate [here](http://www.learnpiv.com/admin/) for a more detailed view of the database. 
+The page you arrive to should look like the following: 
+
+<img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku5.png" height="500"/>
+
 
 
 #### Environment Variables
