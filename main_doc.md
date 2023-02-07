@@ -18,9 +18,9 @@ The overall structure of learnpiv is shown below and is very much based off a Dj
 
 ### Github
 We use a Github repository to store all our code updates and progress. This repository is currently private, but can be accessed by 
-the permission of the repository holder Kevin Roberts (kevinjrob9@gmail.com). As heroku is the host of the website, it requires
+the permission of the repository holder Kevin Roberts (kevinjrob9@gmail.com). As Heroku is the host of the website, it requires
 access to the information from the Github account. If one is to edit the website, one must first make changes and push them
-to the github account, then afterwards push the github code to heroku. This will be shown more in depth in the following
+to the github account, then afterwards push the github code to Heroku. This will be shown more in depth in the following
 Code Additions, Navigation and Testing section.
 
 ### AWS
@@ -37,7 +37,7 @@ main/ folder is expanded:
 
 Notice how css/ and js/ are folders that are included in the code that's pushed to the github repository. These folders are
 included solely to make testing javascripts functions and css styles easier. If anything in these folders is changed and
-pushed to the github repository and then pushed to heroku, then the live site WILL NOT include these changes because heroku
+pushed to the github repository and then pushed to Heroku, then the live site WILL NOT include these changes because Heroku
 is grabbing information from the AWS s3 bucket, and not from the folders that have been pushed. To be consistent in making 
 changes to the css styles and javascript functions, it must be tested locally first (again, how to test will be shown below),
 and then the developer must include these changes additionally to the s3 bucket. This must be done to make changes to the
@@ -67,7 +67,7 @@ list below and explain:
 
 #### General Information
 
-Upon logging into the heroku account, you should see something like the following which is a list of applications. In our
+Upon logging into the Heroku account, you should see something like the following which is a list of applications. In our
 case, we only have the learnpiv app: 
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku1.png" height="600"/>
@@ -85,53 +85,53 @@ To the right of the Add-ons in the figure above are the latest deploys. This is 
 you can see if your builds have succeeded, when you last deployed, and differences in deployment. Additionally, you can 
 click on View build log to observe errors in the build. This is a great way to debug if the application has failed to build. 
 These builds are initiated whenever environment variables are changed, Add-ons are added, and when pushing code from the
-github repository. The command ``git push heroku main`` is the command to push code from the repository to heroku, and I 
+github repository. The command ``git push heroku main`` is the command to push code from the repository to Heroku, and I 
 go over how this is done more specifically in the Code Additions, Navigvation, and Testing section. 
 
-It's important to always keep the code and files in heroku the exact same as the code and files in the github repository.
-One may ask, "Why should I have to worry about this if heroku is always just using the code that's pushed from the github
-repository?" The reason one should worry is, because we have written code that writes code to certain files in heroku after 
+It's important to always keep the code and files in Heroku the exact same as the code and files in the github repository.
+One may ask, "Why should I have to worry about this if Heroku is always just using the code that's pushed from the github
+repository?" The reason one should worry is, because we have written code that writes code to certain files in Heroku after 
 a user interacts with the website and not in the github repository. This was an earlier development issue, which has been 
 resolved in such a way that only YOU, the developer, can make the changes. It's just important to understand that there 
-can be differences in the code in heroku and the code in the github repository. Making sure the code is consistent in both
-is good practice and can easily be done by pushing code from the repository to heroku.
+can be differences in the code in Heroku and the code in the github repository. Making sure the code is consistent in both
+is good practice and can easily be done by pushing code from the repository to Heroku.
 
-Observe the following tabs in the figure above on the heroku website. The second tab in Resources where one can find more
+Observe the following tabs in the figure above on the Heroku website. The second tab in Resources where one can find more
 information about the add-ons that are being used (for learnpiv, we only use Dynos and Postgres). The next tab, Deploy, 
 includes more information about the connection Heroku has with the github repository. In this section you can also allow 
 manual deploys and set up different code connections. We are not currently using any of these additional features. The final 
 tab to keep in mind is of course the Settings tab. The information in this tab includes environment variables, domain names, 
 and a convenient Maintenance Mode option, which is nice to use when there are bugs in the website. It shuts down the site
 so that nobody can access it while the developer can fix any bugs. In the next few paragraphs I'll go over Dynos, Slugs, 
-environment variables, and more information on the database, all of which are heavy aspects of heroku.
+environment variables, and more information on the database, all of which are heavy aspects of Heroku.
 
 #### Dynos
 
 In the Heroku documentation, it is said that Dynos are simply lightweight Linux containers dedicated to running the application
 processes. For now, the learnpiv application is using the Eco plan for Dynos, meaning we get 1000 dyno hours shared across
-all our Eco dynos. A heroku dyno is essentially an instance of a server that contains all the learnpiv application's code, 
-dependencies (like matplotlib, Pillow, BeautifulSoup, etc), and environment variables pre-loaded into it. A heroku dyno can
-also run any process that comprises the learnpiv app. To learn more on scaling dynos, heorku provides wonderful documentation
+all our Eco dynos. A Heroku dyno is essentially an instance of a server that contains all the learnpiv application's code, 
+dependencies (like matplotlib, Pillow, BeautifulSoup, etc), and environment variables pre-loaded into it. A Heroku dyno can
+also run any process that comprises the learnpiv app. To learn more on scaling dynos, Heroku provides wonderful documentation
 [here](https://devcenter.heroku.com/articles/dyno-types#:~:text=From%20the%20Heroku%20Dashboard&text=Click%20the%20app%20you%20want,Professional%20(Standard%2FPerformance).).
 To ensure that the scaling of dynos is working, be sure to be in the pivwebsite folder that contains manage.py. For me it's 
 Users/kevinjayroberts/Dev/pivwebsite/pivwebsite
 
 #### Slugs
 
-From the heroku documentation, Slugs are said to be "compressed and pre-packaged copies of your application optimized for 
-distribution to the dyno manager". When code from the github repository is pushed to heroku, it is recieved by the slug 
+From the Heroku documentation, Slugs are said to be "compressed and pre-packaged copies of your application optimized for 
+distribution to the dyno manager". When code from the github repository is pushed to Heroku, it is recieved by the slug 
 compiler. This compiler transforms the information into a slug. Scaling an application (scaling dynos as described above) 
 downloads and expands the slug into a dyno for execution. As of January 2023, the learnpiv application is using 316.1 MiB 
-of 500 MiB available slug size. There are times when pushing code up to heroku in the terminal, one may get a message
+of 500 MiB available slug size. There are times when pushing code up to Heroku in the terminal, one may get a message
 saying that "your slug size is too large". A most common cause of this is because there is too much data being pushed to 
-heroku that the slugs can't handle. We ran into this issue many times after pushing code to heroku that included images.
+Heroku that the slugs can't handle. We ran into this issue many times after pushing code to Heroku that included images.
 This also may happen if the packages being loaded are too large. It's always good practice to make sure that all the packages 
 in the requirements.txt folder are necessary to the project. If there are packages that aren't being used in the website, 
 then they should not be included in the requirements.txt because it'll just take up more slugs that don't need to be used.
 
 #### Postgres database
 
-The Postgres database is a managed SQL database service that is provided by heroku. We are using this database to store
+The Postgres database is a managed SQL database service that is provided by Heroku. We are using this database to store
 all the users' information in the website except for their generated images (which are being stored in the AWS s3 bucket).
 There are a variety of ways that you can view the information stored in the Postgres database. The most general way is through
 the Heroku account. In the home page of application (see image above), to view more database information, click on the 
@@ -150,7 +150,7 @@ the project and type ``heroku pg:psql`` and hit enter. For me, it looks like the
 
 <img src="https://raw.githubusercontent.com/Kevin-Jay-Roberts21/learnpiv_documentation/main/pivdoc_images/heroku3.png" height="500"/>
 
-Logging in to heorku may be required if not done so already to access the database information. From here, 
+Logging in to Heroku may be required if not done so already to access the database information. From here, 
 type the command ``\dt``. This command will show you all the tables. Many of these tables are not manually created, some 
 are taken from the django documentation. The only tables that we've created from scratch for the website are ``main_experimentdata``, 
 ``main_experimentnonuserdata``, ``main_experimentsingledata``, and ``main_writenewcode``. The purposes of these tables will
@@ -186,17 +186,23 @@ further under Code Additions and when I go over models in the code descriptions.
 Environment variables are a major aspect of the website, arguably the most important. Environment variables are essentially 
 a collection of passwords which give accessibility to certain services such as AWS, Mailjet, Gmail, and other. The learnpiv 
 website uses Amazon Web Services (AWS) to store data and Mailjet and Gmail to send emails. With each of these services, 
-comes important variables (like usernames and passwords to accounts) which can be found in the heroku account under Config 
+comes important variables (like usernames and passwords to accounts) which can be found in the Heroku account under Config 
 Vars. Note that these variables may differ from the ones in the local project in the .env folder. Differences like the ``DEBUG``
-variable for example. We always want ``DEBUG`` set to True when testing and always want it False when in production. 
+variable for example. We always want ``DEBUG`` set to True when testing and always want it False when in production. It 
+is important to note that when creating a configuration variable in Heroku, it is taken as a string and NOT a boolean value.
+This must be taken into consideration in the settings.py file when any boolean values are required for an environment variable.
 
 ### .env
 
-
+The .env file in the project is not included in the github repository and that's clearly because the .env file contains 
+very important, private passwords and environment variables. Some of these values differ from the Configuration Variables 
+in Heroku because they may be set specifically for testing purposes. Again, in the .env file, the debug variable is set 
+to True because, well, we want to be able to debug the application when testing. More on environment variables can be found
+in Django's excellent documentation for the settings.py file found [here](https://docs.djangoproject.com/en/4.1/topics/settings/).
 
 ## Code Additions, Navigation and Testing
 
-(include database access through both admin and heroku terminal)
+(include database access through both admin and Heroku terminal)
 (include migrations)
 
 (how to add/test code)
@@ -224,13 +230,13 @@ This is a "testing version" of the website. The developer is free to create user
 the website. If the developer does create any users or experiments or anything that will modify the database, then the said 
 data will be saved in a local database file, namely: ``db.sqlite3``. This database file is saved and pushed to github as 
 we don't include it in our ``.gitignore`` file. Modifications made to ``db.sqlite3`` WILL NOT be uploaded to the database 
-in heroku. Heroku uses a separate Postgres Database. Thus, when pulling from the github repository, ``dpsqlite`` may be 
+in Heroku. Heroku uses a separate Postgres Database. Thus, when pulling from the github repository, ``dpsqlite`` may be 
 edited, however the developer should not pay mind to it's edits as it's treated as a "testing database".
 
 
 
-(heroku rollback)
-(push heroku)
+(Heroku rollback)
+(push Heroku)
 (how to test in local environment)
 
 
